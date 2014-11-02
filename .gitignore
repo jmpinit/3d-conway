@@ -1,0 +1,4 @@
+# bin files
+*.exe
+*.o
+*.a

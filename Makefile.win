@@ -1,0 +1,30 @@
+# Project: 3dconway
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = 3dconway.o $(RES)
+LINKOBJ  = 3dconway.o $(RES)
+LIBS =  -L"C:/MinGW/lib" -mwindows libSDL_draw.a C:/MinGW/lib/libSDL.dll.a  
+INCS =  -I"C:/MinGW/include/SDL" 
+CXXINCS =  -I"C:/MinGW/include/SDL" 
+BIN  = 3dconway.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before 3dconway.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "3dconway.exe" $(LIBS)
+
+3dconway.o: 3dconway.cpp
+	$(CPP) -c 3dconway.cpp -o 3dconway.o $(CXXFLAGS)
